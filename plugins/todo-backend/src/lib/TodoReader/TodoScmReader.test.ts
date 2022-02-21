@@ -249,12 +249,7 @@ describe('TodoScmReader', () => {
       filePathFilter,
     });
     reader.readTree.mockResolvedValueOnce({
-      files: async () => [
-        {
-          content: async () => Buffer.from('// TODO: my-todo', 'utf8'),
-          path: '',
-        },
-      ],
+      files: async () => [],
     } as ReadTreeResponse);
     await expect(
       todoReader.readTodos({
